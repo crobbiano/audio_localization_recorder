@@ -54,4 +54,4 @@ if __name__=="__main__":
         recfile.stop_recording()
 
     pixel.blinkRedStart()
-    time.sleep(3)
+    time.sleep(1)
