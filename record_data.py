@@ -85,7 +85,7 @@ if __name__=="__main__":
     with rec.open(audioFile,'wb') as recfile:
         msg = parseGPS(serialPort)
         writeToCsv(csvfile, msg)
-        startTime = time.monotonic()
+        startTime = msg.timestamp
 
         recfile.start_recording()
         while True:
@@ -100,7 +100,7 @@ if __name__=="__main__":
 
         msg = parseGPS(serialPort)
         writeToCsv(csvfile, msg)
-        stopTime = time.monotonic()
+        stopTime = msg.timestamp
 
         recfile.stop_recording()
 

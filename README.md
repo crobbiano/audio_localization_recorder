@@ -30,4 +30,24 @@ sudo pip3 install webrtcvad
 sudo pip3 install pyusb
 
 ## GPS Setup
+The GPS should be plugged in via USB and enumerated to /dev/ttyACM0
+
+Run the following:
+sudo apt install gpsd gpsd-clients
 sudo pip3 install pynmea2
+
+sudo systemctl stop gpsd.socket
+sudo systemctl disable gpsd.socket
+! The following line may not be needed
+sudo gpsd /dev/ttyACM0 -F /var/run/gpsd.sock
+
+To check if the GPS is working, run the following command in the terminal:
+cgps -s
+
+## Operation
+This sctipr assumes that the GPS is plugged in via usb.
+
+To run the script, run the following command in the terminal:
+python3 record_data.py
+
+The mic hat will blink yellow until a sat. fix is found, then it will blink green while it is recording.  Pressing ctrl-c will stop recording and the mic hat will blink red.  Each time the program records stuff, two files are made.  The first is a wav file in logs/audio and the second is a csv file that contains time stamps and lon/lat for the device at least time stamp.  The last line in the csv contains the start and stop times of the audio recording so it can be synced across devices when processing.
