@@ -54,6 +54,9 @@ class Pixels:
     def blinkGreen(self):
         self.put(self.pattern.blinkGreen)
 
+    def blinkYellow(self):
+        self.put(self.pattern.blinkYellow)
+
     def blinkRedStart(self):
         self.put(self.pattern.blinkRedStart)
 

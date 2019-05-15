@@ -6,14 +6,13 @@ Every sample of the audio data is associated with a reading from the GPS to reco
 
 Eventually to be used to analyze algorithms for audio source detection, classification, and localization.
 
-
 Uses stuff from the following:
 Threaded PyAudio streaming from default audio device to a file:
 https://gist.githubusercontent.com/sloria/5693955/raw/88f2f14a32deff2308e2fa332fc82b4de402c29f/recorder.py
 Drivers for the 4 mic pi hat:
 http://wiki.seeedstudio.com/ReSpeaker_4_Mic_Array_for_Raspberry_Pi/
 
-
+## Drivers for audio
 Run the following to install 4 mic array drivers:
 sudo apt-get update
 sudo apt-get upgrade
@@ -22,9 +21,13 @@ cd seeed-voicecard
 sudo ./install.sh
 reboot
 
+## Packages for audio testing
 Run the following commands to install necessary packages:
 sudo apt-get install portaudio19-dev
-sudo pip install pyaudio
-sudo pip install webrtcvad
 sudo apt-get install python-numpy 
-sudo pip install pyusb
+sudo pip3 install pyaudio
+sudo pip3 install webrtcvad
+sudo pip3 install pyusb
+
+## GPS Setup
+sudo pip3 install pynmea2

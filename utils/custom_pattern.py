@@ -64,6 +64,15 @@ class customPattern(object):
         self.show(pixels_off)
         time.sleep(0.2)
 
+    def blinkYellow(self):
+        pixels_on  = [ 0, 5, 5, 0] * self.pixels_number
+        pixels_off  = [ 0, 0, 0, 0] * self.pixels_number
+
+        self.show(pixels_on)
+        time.sleep(0.2)
+        self.show(pixels_off)
+        time.sleep(0.2)
+
     def blinkRedStart(self):
         pixels_on  = [ 0, 5, 0, 0] * self.pixels_number
         pixels_off  = [ 0, 0, 0, 0] * self.pixels_number
