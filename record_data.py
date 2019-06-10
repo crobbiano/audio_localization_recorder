@@ -81,7 +81,7 @@ if __name__=="__main__":
     # open csv file for writing
     csvfile = open(csvFile, "w+")
 
-    rec = recorder.Recorder(channels=4)
+    rec = recorder.Recorder(channels=4, frames_per_buffer=44100)
     with rec.open(audioFile,'wb') as recfile:
         msg = parseGPS(serialPort)
         writeToCsv(csvfile, msg)
